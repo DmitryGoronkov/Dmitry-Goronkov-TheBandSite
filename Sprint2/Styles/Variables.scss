@@ -1,0 +1,126 @@
+@font-face{
+    font-family: 'Main-Font';
+    src: url('../Assets/Fonts/MainFontReg.otf') format('truetype');
+}
+@font-face{
+    font-family: 'Main-Font-Demibold';
+    src: url('../Assets/Fonts/MainFontDemi.otf') format('truetype');
+}
+@font-face{
+    font-family: 'Main-Font-Bold';
+    src: url('../Assets/Fonts/MainFontBold.otf') format('truetype');
+}
+$navgroundcolor: #323232 ;
+$parcolor: #323232;
+$labelcolor: #AFAFAF;
+$textborder: #E1E1E1 ;
+$textbackfill: #FAFAFA;
+$lightblacktint: rgba(50,50,50,0.5);
+@mixin main-header{
+    color: $textbackfill;
+    font-family: 'Main-Font-Bold', sans-serif;
+    line-height: 2rem;
+    font-size: 1.5rem;
+    margin:0;
+    @media (min-width: 426px){
+        font-size: 3.75rem;
+        line-height: 4.25rem;
+    }
+}
+@mixin header{
+    color:$parcolor;
+    line-height: 2rem;
+    font-size: 1.5rem;
+    font-family: 'Main-Font-Bold', sans-serif;
+    margin:0;
+    @media (min-width: 426px){
+        font-size: 2.25rem;
+        line-height: 2.75rem;
+    }
+}
+@mixin header2{
+    color:$parcolor;
+    line-height: 2rem;
+    font-size: 1.5rem;
+    font-family: 'Main-Font-Bold', sans-serif;
+    
+}
+@mixin subheader{
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    color:$parcolor;
+    font-family: 'Main-Font-Demibold';
+    margin:0;
+    @media (min-width: 426px){
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+}
+@mixin subheaderfooter{
+    color: $textbackfill;
+    margin: 0px;
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    font-family: 'Main-Font-Demibold';
+    @media (min-width: 426px){
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+}
+@mixin paragraph{
+    font-size: 0.812rem;
+    line-height: 1.125rem;
+    color:$parcolor;
+    font-family: 'Main-Font';
+    @media (min-width: 426px){
+        font-size: 0.875rem;
+        line-height: 1.375rem;
+    }
+}
+@mixin lists{
+    font-size: 0.812rem;
+    line-height: 1.125rem;
+    color:$parcolor;
+    font-family: 'Main-Font';
+    margin:0;
+    @media (min-width: 426px){
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+    }
+}
+@mixin labels{
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    color:$labelcolor;
+    font-family: 'Main-Font';
+    margin:0;
+}
+@mixin navbarfont{
+    font-size: 1rem;
+    font-family: 'Main-Font';
+    margin:0;
+}
+@mixin side-margin{
+    margin-left: 1rem;
+    margin-right: 1rem;
+    @media (min-width:426px){
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+    }
+    @media (min-width:1440px){
+        margin-left: 180px;
+        margin-right: 180px;
+    }
+}
+@mixin side-padding{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    @media (min-width:426px){
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+    @media (min-width:1440px){
+        padding-left: 180px;
+        padding-right: 180px;
+    }
+}
