@@ -16,6 +16,7 @@ $labelcolor: #AFAFAF;
 $textborder: #E1E1E1 ;
 $textbackfill: #FAFAFA;
 $lightblacktint: rgba(50,50,50,0.5);
+$divider: #DEDEDE;
 @mixin main-header{
     color: $textbackfill;
     font-family: 'Main-Font-Bold', sans-serif;
@@ -50,6 +51,17 @@ $lightblacktint: rgba(50,50,50,0.5);
     line-height: 1.375rem;
     color:$parcolor;
     font-family: 'Main-Font-Demibold';
+    margin:0;
+    @media (min-width: 426px){
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+}
+@mixin subheader-com{
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    color:$parcolor;
+    font-family: 'Main-Font';
     margin:0;
     @media (min-width: 426px){
         font-size: 1rem;
@@ -92,7 +104,14 @@ $lightblacktint: rgba(50,50,50,0.5);
     font-size: 0.75rem;
     line-height: 1.25rem;
     color:$labelcolor;
-    font-family: 'Main-Font';
+    font-family: 'Main-Font-Demibold';
+    margin:0;
+}
+@mixin labels-button{
+    font-size: 0.8rem;
+    line-height: 1.25rem;
+    color:white;
+    font-family: 'Main-Font-Demibold';
     margin:0;
 }
 @mixin navbarfont{
