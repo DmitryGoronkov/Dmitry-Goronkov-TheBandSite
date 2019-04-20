@@ -25,8 +25,8 @@ a {
 
 .hero {
   height: 183px;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(50, 50, 50, 0.5))), url("../Assets/Images/Hero.jpg");
-  background-image: linear-gradient(rgba(50, 50, 50, 0.5)), url("../Assets/Images/Hero.jpg");
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(163, 163, 163, 0.397))), url("../Assets/Images/Hero.jpg");
+  background-image: linear-gradient(rgba(163, 163, 163, 0.397)), url("../Assets/Images/Hero.jpg");
   background-position: 0px 0px;
   background-repeat: no-repeat;
   background-size: cover;
@@ -82,7 +82,7 @@ a {
   margin: 0;
 }
 
-@media (min-width: 426px) {
+@media (min-width: 542px) {
   .hero__header {
     font-size: 3.75rem;
     line-height: 4.25rem;

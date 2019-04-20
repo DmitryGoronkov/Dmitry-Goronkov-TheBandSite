@@ -70,7 +70,7 @@
   margin-bottom: 1.5rem;
 }
 
-@media (min-width: 426px) {
+@media (min-width: 542px) {
   .footer__top__header {
     font-size: 3.75rem;
     line-height: 4.25rem;
