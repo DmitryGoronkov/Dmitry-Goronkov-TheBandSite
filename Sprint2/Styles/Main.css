@@ -141,7 +141,7 @@ a {
   margin: 0;
 }
 
-@media (min-width: 426px) {
+@media (min-width: 542px) {
   .main__header {
     font-size: 2.25rem;
     line-height: 2.75rem;
@@ -383,7 +383,7 @@ a {
   margin-bottom: 1.5rem;
 }
 
-@media (min-width: 426px) {
+@media (min-width: 542px) {
   .imagesec__header {
     font-size: 2.25rem;
     line-height: 2.75rem;
@@ -436,6 +436,10 @@ a {
   filter: none;
 }
 
+.commentTemplate {
+  display: none;
+}
+
 .commentsec {
   background-color: white;
   padding-top: 2rem;
@@ -472,7 +476,7 @@ a {
   padding-bottom: 2.5rem;
 }
 
-@media (min-width: 426px) {
+@media (min-width: 542px) {
   .commentsec__header {
     font-size: 2.25rem;
     line-height: 2.75rem;
