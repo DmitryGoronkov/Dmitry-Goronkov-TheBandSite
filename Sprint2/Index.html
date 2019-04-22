@@ -14,7 +14,7 @@
         <a href="index.html"><div class="navbar__image"><img src="Assets/Logo/Logo-bandsite.png" alt="logo"></div></a>
         <div class="navbar__menu">
             <a class="navbar__menu__bio" href="Index.html">Biography</a>
-            <a class="navbar__menu__show" href="Shows.html">Shows</a><!--Change link once other webpage is created-->
+            <a class="navbar__menu__show" href="Shows.html">Shows</a>
         </div>
     </nav>
     <header class="hero">
@@ -25,11 +25,11 @@
         <h2 class="main__header">
             About The Musicians
         </h2>
-        <figure class="main__img"></figure>
-        <h3 class="main__header2">“We are more comfortable with not fighting what comes naturally. Before we might have thought, ‘We need to be smarter than this’”</h3>
-        <h3 class="main__header2__bottom">- Xavier de Rosnay</h3>
-        <h3 class="main__parhead">Xavier de Rosnay & Gaspard Augé</h3>
-        <section class="main__parsection">
+        <figure class="main__img main--indented"></figure>
+        <h3 class="main__header2 main--indented">“We are more comfortable with not fighting what comes naturally. Before we might have thought, ‘We need to be smarter than this’”</h3>
+        <h3 class="main__header2__bottom main--indented">- Xavier de Rosnay</h3>
+        <h3 class="main__parhead main--indented">Xavier de Rosnay & Gaspard Augé</h3>
+        <section class="main__parsection main--indented">
             <p1 class="main__par">Xavier De Ronsay and Gaspard Augé had a few mutual friends, who happened to run a record label, seeking tracks for a compilation. With an immediate connection, the pair decided to try their hand at making a song. That’s when they created their breakout single, We Are Your Friends – a feel-good, funk-filled, instant anthem that lost the remix contest, but won the attention of Pedro Winter, director of the newly founded Ed Banger Records, who boasted Daft Punk as former clients. One week later, they were in his office, signing a record deal.</p1>
             <p1 class="main__par main__par__2">Xavier De Ronsay and Gaspard Augé had a few mutual friends, who happened to run a record label, seeking tracks for a compilation. With an immediate connection, the pair decided to try their hand at making a song. That’s when they created their breakout single, We Are Your Friends – a feel-good, funk-filled, instant anthem that lost the remix contest, but won the attention of Pedro Winter, director of the newly founded Ed Banger Records, who boasted Daft Punk as former clients. One week later, they were in his office, signing a record deal.</p1>
         </section>
@@ -68,21 +68,30 @@
     </section>
     <section class="commentsec">
         <h2 class="commentsec__header">Join The Conversation</h2>
-        
         <div class="commentsec__inputsec">
             <div class ="commentsec__inputsec__image"></div>
             <form class ="commentsec__inputsec__form">
                 <label for="name">NAME</label>
                 <input type="text" name="name" id="name">
                 <label for="comment">COMMENT</label>
-                <input type="text" name="comment" id="comment">
-                <button onclick="myFunction()" class="commentsec__inputsec__form__button" type="submit">COMMENT</button>
+                <textarea name="comment" id="comment" rows="3"></textarea>
+                <button class="commentsec__inputsec__form__button" type="submit">COMMENT</button>
             </form>
         </div>
-        <div class ="commentsec__existing"></div>       
+        <div class ="commentsec__existing"></div>   
+        <div class = "commentsec--Template">
+            <div class="commentsec__existing__one">
+                <div class ="commentsec__existing__one__image"></div>
+                <div class ="commentsec__existing__one__comment">
+                    <div class ="commentsec__existing__one__comment__header">
+                        <div class="commentsec__existing__one__comment__header--name"></div>
+                        <div class="commentsec__existing__one__comment__header--date"></div>
+                    </div>
+                <p class ="commentsec__existing__one__comment__body"></p>
+            </div>
+        </div>
     </section>
     <footer class="footer">
-        <div id="myDiv">sadasd</div>
         <section class="footer__top">
             <h2 class="footer__top__header">Get in touch</h2>
             <div class="footer__top__iconbar">
@@ -131,21 +140,8 @@
             <p>Copyright The Bees Knees © 2018</p>
             <p>All Rights Reserved</p>
         </div>
-        
     </footer>
-    <div class = "commentTemplate">
-        <div class="commentsec__existing__one">
-            <div class ="commentsec__existing__one__image"></div>
-            <div class ="commentsec__existing__one__comment">
-                <div class ="commentsec__existing__one__comment__header">
-                    <div class="commentsec__existing__one__comment__header--name">Micheal Lyons</div>
-                    <div class="commentsec__existing__one__comment__header--date">12/18/2018</div>
-                </div>
-                <div class ="commentsec__existing__one__comment__body">They BLEW the ROOF off at their last show, once everyone started figuring out they were going. This is still simply the greatest opening of a concert I have EVER witnessed.</div>
-            </div>
-        </div>
-    </div>
-    <script src="Script.js"></script>
+    <script src="./Scripts/Biography.js"></script>
 </body>
     
 

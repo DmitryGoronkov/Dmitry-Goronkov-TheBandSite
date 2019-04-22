@@ -1,4 +1,6 @@
 @import './variables.scss';
+@import './Mixins.scss';
+@import './Font-face.scss';
 body {
     margin: 0;
     font-family: 'Main-Font';
@@ -123,6 +125,11 @@ a{
             }
         }
     }
+    &--indented{
+        @media(min-width: 1440px){
+            margin-left: 5.75rem;
+        }
+    }
 }
 .imagesec{
     background-color: $textborder;
@@ -134,7 +141,6 @@ a{
         padding-bottom:2.5rem;
     }
     @include side-padding();
-    
     &__grid{
         display:flex;
         flex-wrap: wrap;
@@ -169,8 +175,9 @@ a{
         @media (min-width:768px){
             margin-bottom: 1.5rem;
         }
-        -webkit-filter: grayscale(1); 
-        filter: grayscale(1); 
+        -webkit-filter: grayscale(1) brightness(130%);
+        filter: grayscale(1) brightness(130%); 
+        
         @media(min-width: 426px){
             width:224px;
             height:126px;
@@ -187,9 +194,6 @@ a{
         -webkit-filter: grayscale(0);
         filter: none;
     }     
-}
-.commentTemplate{
-    display: none;
 }
 .commentsec{
     background-color: white;
@@ -216,7 +220,6 @@ a{
         }
         display: flex;
         &__image{
-            
             background-image: url("../Assets/Images/Mohan-muruge.jpg");
             background-position: center; 
             background-repeat: no-repeat; 
@@ -248,9 +251,9 @@ a{
                 }
             }
             #name{
-                height: 2rem;
                 border-radius: 5px;
-                border: solid 1px $labelcolor;
+                @include inputstyle();
+                @include subheader-com();
                 margin-bottom: 1rem;
                 @media(min-width: 1440px){
                     height: 3rem;
@@ -258,11 +261,15 @@ a{
                     margin-bottom: 1.5rem;
                 }
             }
+            #name:focus{
+                outline:none;
+                border: solid 2px $navgroundcolor;
+            }
             #comment{
-                
-                height: 5rem;
                 border-radius: 0.3rem;
-                border: solid 1px $labelcolor;
+                box-sizing: border-box;
+                @include inputstyle();
+                @include subheader-com();
                 margin-bottom: 1rem;
                 @media(min-width: 1440px){
                     height: 6rem;
@@ -270,7 +277,11 @@ a{
                     margin-bottom: 1.5rem;
                 }
             }
-            &__button{
+            #comment:focus{
+                outline:none;
+                border: solid 2px $navgroundcolor;
+            }
+           &__button{
                 height: 3rem;
                 background-color: $navgroundcolor;
                 border: none;
@@ -284,6 +295,12 @@ a{
                     width: 160px;
                     align-self: flex-end;
                 }
+            }
+            &__button:focus{
+                outline:none;
+            }
+            &__button:active{
+                background-color:$clicked;
             }
         }
     }
@@ -302,30 +319,23 @@ a{
             padding-top: 1.5rem;
             border-top: solid 1px $divider;
             display: flex;
-            
             &__image{
                 background-color: $divider;
                 width: 2.25rem;
                 height: 2.25rem;
                 border-radius: 1.2rem;
-                
             }
             &__comment{
-            
                 display: flex;
                 flex-direction: column;
                 margin-left:1rem;
                 width: 80%;
                 &__header{
-                    
                     display: flex;
                     justify-content: space-between;
                     &--name{
                         @include subheader();
-                    
-                        
                     }
-                    
                     &--date{
                         color: $divider;
                     }
@@ -334,12 +344,14 @@ a{
                     @include subheader-com();
                     margin-top: 1rem;
                     margin-bottom: 1.5rem;
-                   
-
-                }
+                    
+                   }
             }
         }
         border-bottom: solid 1px $divider;
         margin-bottom: 2.5rem;
+    }
+    &--Template{
+        display: none;
     }
 }

@@ -37,8 +37,8 @@ h1 {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding-top: 4rem;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(163, 163, 163, 0.397))), url("../Assets/Images/HeroShows.jpg");
-  background-image: linear-gradient(rgba(163, 163, 163, 0.397)), url("../Assets/Images/HeroShows.jpg");
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(100, 99, 99, 0.397))), url("../Assets/Images/HeroShows.jpg");
+  background-image: linear-gradient(rgba(100, 99, 99, 0.397)), url("../Assets/Images/HeroShows.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   padding-left: 1rem;
@@ -239,7 +239,7 @@ h1 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  border-bottom: solid 1px #DEDEDE;
+  border-bottom: solid 1px #c7c7c7;
   margin-top: 2rem;
 }
 
@@ -475,5 +475,13 @@ h1 {
     margin-left: auto;
     width: 160px;
   }
+}
+
+button:focus {
+  outline: none;
+}
+
+button:active {
+  background-color: #181769;
 }
 /*# sourceMappingURL=Shows.css.map */

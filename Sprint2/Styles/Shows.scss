@@ -1,4 +1,6 @@
 @import './variables.scss';
+@import './Mixins.scss';
+@import './Font-face.scss';
 body {
     margin: 0;
     font-family: 'Main-Font';
@@ -212,4 +214,10 @@ h1{
             }
         }
     }
+}
+button:focus{
+    outline:none;
+}
+button:active{
+    background-color:$clicked;
 }

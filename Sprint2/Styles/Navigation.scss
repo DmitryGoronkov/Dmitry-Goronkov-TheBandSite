@@ -1,4 +1,6 @@
 @import './variables.scss';
+@import './Mixins.scss';
+@import './Font-face.scss';
 .navbar{
     background-color: $navgroundcolor;
     color: $labelcolor;
@@ -32,8 +34,7 @@
         }
         &__bio{
             @include navbarfont();
-            color: $textbackfill;
-            border-bottom: solid 3px white;
+            color: $labelcolor;
             text-align: center;
             padding-bottom: 2px;
             @media (max-width: 425px){
@@ -52,20 +53,24 @@
             @include navbarfont();
             color: $labelcolor;
             text-align: center;
+            padding-bottom: 2px;
             @media (max-width: 425px){
                 width:100%;
             }
             @media (min-width: 426px){
                 margin-left:2.5rem;
                 line-height:4.75rem;
-                padding-bottom:0px;
+                padding:0px 5px; 
             }
             @media (min-width: 1440px){
                 margin-left:3.5rem; 
             }
         }
         &__show:hover{
-            color: $textbackfill;    
+            color: white;    
+        }
+        &__bio:hover{
+            color: white;    
         }
     }
 }
