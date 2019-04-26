@@ -1,0 +1,125 @@
+@import './variables.scss';
+.footer{
+    background-color: $navgroundcolor;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    @media(min-width: 1440px){
+        padding-top: 3rem;
+        padding-bottom: 3rem;    
+    }   
+    @include side-padding();
+    &__top{
+        @media(min-width:426px){
+            display:flex;
+            align-content: flex-end;
+            padding-bottom:2rem;
+            flex-wrap: wrap;    
+        }
+        @media (min-width:1440px){
+            padding-bottom: 3.5rem;
+        }
+        &__header{
+            @include main-header();
+            @media(min-width:426px){
+                @include header();
+                color: $textbackfill;
+                margin-right: 3rem;
+            }
+            margin-bottom: 1.5rem;
+        } 
+        &__iconbar{
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            @media(min-width:426px){
+                display: flex;
+                margin-bottom: 0px;
+            }
+            @media(min-width:1440px){
+                margin-left: 1.5rem;
+            }
+            &__icon{
+                margin-right: 1.5rem;
+                @media(min-width: 1440px){
+                    margin-right: 2rem;    
+                }  
+            }
+        }
+        &__logo{
+            display:none;
+            @media(min-width:426px){
+                display:none;
+            }
+            @media(min-width:551px){
+                display:flex;
+                align-self: center;
+                margin-left:auto;
+            }
+            @media(min-width:1440px){
+                height: 20px;
+                width: 120px;
+            }
+        }
+    }
+    &__contacts{
+        @media(min-width:426px){
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+        }
+        &__item{ 
+            &__name{
+                margin-bottom: 1rem;
+                @media(min-width:1440px){
+                    margin-bottom: 1.5rem;
+                }
+                & h5{
+                    @include subheaderfooter();    
+                }
+            }
+            &__adress{
+                margin-bottom: 1rem;
+                @media(min-width:1440px){
+                    margin-bottom: 1.5rem;
+                }
+                font-size:0.812rem;
+                & p{
+                    @include paragraph();
+                    color: $textbackfill;
+                    margin: 0px 0px;
+                }
+            }
+            &__email{
+                @include paragraph();
+                color: $textbackfill;
+                margin-bottom: 1.5rem;
+                @media(min-width:1440px){
+                    margin-bottom: 2rem;
+                }  
+            }
+            &--margin{
+                @media(min-width:426px){
+                    margin-right: 1.5rem;
+                }
+                @media(min-width:1024px){
+                    margin-right: 4rem;
+                }
+            }
+        }
+    }
+    &__copyright{
+        padding-top:8px;
+        @include paragraph();
+        color: $textbackfill;
+        @media (min-width:426px){
+            display:flex;
+        }
+        & p{
+            margin: 4px 0px;
+            @media (min-width:426px){
+                display:flex;
+                margin-right: 4px;
+            }
+        }
+    }
+}
+

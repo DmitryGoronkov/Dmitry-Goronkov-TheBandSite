@@ -1,0 +1,77 @@
+@import './variables.scss';
+@import './Mixins.scss';
+@import './Font-face.scss';
+.navbar{
+    background-color: $navgroundcolor;
+    color: $labelcolor;
+    height: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media (min-width:426px){
+        flex-direction: row;   
+    }
+    &__image{
+        margin-top: 1rem;   
+        @media (min-width:426px){
+            margin-left:1.5rem;
+            margin-top: 0px;
+        }  
+        @media (min-width:1440px){
+            margin-left:180px;
+            margin-top: 0px;
+        }    
+    }
+    &__menu{
+        margin-top: 1rem;
+        width: 100%;
+        display: flex;
+        justify-content: stretch;
+        @media (min-width: 426px){
+            display:flex;
+            justify-content: flex-start;
+            margin-top: 0px;
+        }
+        &__bio{
+            @include navbarfont();
+            color: $labelcolor;
+            text-align: center;
+            padding-bottom: 2px;
+            @media (max-width: 425px){
+                width:100%;
+            }
+            @media (min-width: 426px){
+                margin-left:3rem;
+                line-height:4.75rem;
+                padding:0px 5px;   
+            }
+            @media (min-width: 1440px){
+                margin-left:3.5rem;
+            }
+        }
+        &__show{
+            @include navbarfont();
+            color: $labelcolor;
+            text-align: center;
+            padding-bottom: 2px;
+            @media (max-width: 425px){
+                width:100%;
+            }
+            @media (min-width: 426px){
+                margin-left:2.5rem;
+                line-height:4.75rem;
+                padding:0px 5px; 
+            }
+            @media (min-width: 1440px){
+                margin-left:3.5rem; 
+            }
+        }
+        &__show:hover{
+            color: white;    
+        }
+        &__bio:hover{
+            color: white;    
+        }
+    }
+}
+

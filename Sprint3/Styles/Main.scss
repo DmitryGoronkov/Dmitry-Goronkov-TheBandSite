@@ -1,0 +1,357 @@
+@import './variables.scss';
+@import './Mixins.scss';
+@import './Font-face.scss';
+body {
+    margin: 0;
+    font-family: 'Main-Font';
+}
+a{
+    text-decoration: none;
+    color: $textbackfill;
+}
+.hero{
+    height: 183px;
+    @media (min-width:426px){
+        height: 400px;
+    }
+    @media (min-width:1440px){
+        height: 670px;
+    }
+    background-image: linear-gradient($lightblacktint), url("../Assets/Images/Hero.jpg");
+    background-position: 0px 0px; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+    @include side-padding();
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    &__header{
+        @include main-header();
+        margin:0; 
+    }
+}
+.main{
+    @include side-margin();
+    margin-top:2rem;
+    margin-bottom:2.5rem;
+    @media(min-width: 426px){
+        margin-bottom: 2rem;
+    }
+    @media(min-width: 1440px){
+        margin-bottom: 3rem;
+        margin-top: 3rem;
+    }
+    
+    & figure{
+        margin-top: 1.5rem;
+        @media(min-width: 1440px){
+            margin-top: 3rem;
+        }
+    }
+   
+    &__header{
+        @include header();
+    }
+    &__img{
+        height:150px;
+        @media (min-width:426px){
+            height:362px;
+        }
+        @media(min-width: 1440px){
+            height:450px;
+        }
+        background-image: url("../Assets/Images/Justice.jpg");
+        background-position: center; 
+        background-repeat: no-repeat; 
+        background-size: cover;
+        margin:0;   
+    }
+    &__header2{
+        @include subheader();
+        @media (min-width:426px){
+            @include header2();
+        }
+        margin-top:1.5rem;
+        margin-bottom: 2rem;
+        @media(min-width: 1440px){
+            margin-bottom: 3rem;
+            margin-top: 2.5rem;
+        }
+        &__bottom{
+            @include subheader();
+            margin-bottom: 2.5rem;
+            margin-top: 0px;
+            @media(min-width: 1440px){
+                margin-bottom: 3.5rem;
+                
+            }
+        }
+    }
+    &__parhead{
+        @include subheader();
+        @media (min-width:426px){
+            @include header2();
+        }
+        margin-top: 0px;
+        margin-bottom: 1.5rem;
+        @media(min-width: 1440px){
+            margin-bottom: 2rem;
+            
+        }
+    }
+    &__parsection{
+        @media(min-width: 426px){
+            display: flex;
+        }
+    }
+    &__par{
+        display: block;
+        @include paragraph();
+        margin-bottom: 1.5rem;
+        @media(min-width: 426px){
+            margin-bottom: 1rem;
+        }
+        @media(min-width: 1440px){
+            margin-bottom: 0px;
+        }
+        &__2{
+            @media(min-width: 426px){
+                margin-left:1.5rem;
+
+            }
+            @media(min-width: 1440px){
+                margin-left:3.5rem;
+            }
+        }
+    }
+    &--indented{
+        @media(min-width: 1440px){
+            margin-left: 5.75rem;
+        }
+    }
+}
+.imagesec{
+    background-color: $textborder;
+    padding-top:2rem;
+    padding-bottom:2.5rem;
+   
+    @media(min-width: 1440px){
+        padding-top:3rem;
+        padding-bottom:2.5rem;
+    }
+    @include side-padding();
+    &__grid{
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        @media(min-width: 560px) and (max-width:630px){
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+        @media(min-width: 630px) and (max-width:720px){
+            padding-left: 4rem;
+            padding-right: 4rem;
+        }
+        @media(min-width: 820px) and (max-width:943px){
+            padding-left: 3rem;
+            padding-right: 3rem;
+        }
+        @media (min-width: 1168px) and (max-width:1439px){
+            justify-content: flex-start;
+        }
+    }
+    &__header{
+        @include header();
+        margin-bottom: 1.5rem;
+        @media(min-width: 1440px){
+            margin-bottom:4rem;
+        }
+    }
+    &__image{
+        width:100%;
+        object-fit: contain;
+        margin-bottom: 1rem; 
+        @media (min-width:768px){
+            margin-bottom: 1.5rem;
+        }
+        -webkit-filter: grayscale(1) brightness(130%);
+        filter: grayscale(1) brightness(130%); 
+        
+        @media(min-width: 426px){
+            width:224px;
+            height:126px;
+        } 
+        @media (min-width: 1168px) and (max-width:1439px){
+            margin-right: 1rem;
+        }
+        @media(min-width: 1440px){
+            width:344px;
+            height:193px;
+        }        
+    }
+    &__image:hover{
+        -webkit-filter: grayscale(0);
+        filter: none;
+    }     
+}
+.commentsec{
+    background-color: white;
+    padding-top:2rem;
+    @media(min-width: 1440px){
+        padding-top: 3rem;
+    }
+    @include side-padding();
+    &__header{
+        @include header();
+        padding-bottom: 2.5rem;
+        @media(min-width: 1440px){
+            padding-bottom: 3.5rem;
+        }
+    }
+    &__inputsec{
+        @media (min-width: 768px){
+            padding-left: 100px;
+            padding-right: 100px;
+        }
+        @media (min-width: 1440px){
+            padding-left: 276px;
+            padding-right: 276px;
+        }
+        display: flex;
+        &__image{
+            background-image: url("../Assets/Images/Mohan-muruge.jpg");
+            background-position: center; 
+            background-repeat: no-repeat; 
+            background-size: cover;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 1.25rem;
+            @media(min-width: 1440px){
+                width: 3rem;
+                height: 3rem;
+                border-radius: 1.5rem;
+            }
+            position: relative;
+            top: 1rem;
+        }
+        &__form{
+            width:80%;
+            margin-left:1rem;
+            @media(min-width: 1440px){
+                margin-left:1.25rem;
+                width: 460px;
+            }
+            display: flex;
+            flex-direction: column;
+            label{
+                @include labels();
+                @media(min-width: 1440px){
+                   margin-bottom:0.5rem;
+                }
+            }
+            #name{
+                border-radius: 5px;
+                @include inputstyle();
+                @include subheader-com();
+                margin-bottom: 1rem;
+                @media(min-width: 1440px){
+                    height: 3rem;
+                    padding: 1rem;
+                    margin-bottom: 1.5rem;
+                }
+            }
+            #name:focus{
+                outline:none;
+                border: solid 2px $navgroundcolor;
+            }
+            #comment{
+                border-radius: 0.3rem;
+                box-sizing: border-box;
+                @include inputstyle();
+                @include subheader-com();
+                margin-bottom: 1rem;
+                @media(min-width: 1440px){
+                    height: 6rem;
+                    padding: 1rem;
+                    margin-bottom: 1.5rem;
+                }
+            }
+            #comment:focus{
+                outline:none;
+                border: solid 2px $navgroundcolor;
+            }
+           &__button{
+                height: 3rem;
+                background-color: $navgroundcolor;
+                border: none;
+                @include labels-button();
+                color: white;
+                text-align: center;
+                text-decoration: none;
+                border-radius: 0.3rem;
+                margin-bottom: 2rem;
+                @media(min-width: 768px){
+                    width: 160px;
+                    align-self: flex-end;
+                }
+            }
+            &__button:focus{
+                outline:none;
+            }
+            &__button:active{
+                background-color:$clicked;
+            }
+        }
+    }
+    &__existing{
+        display: flex;
+        flex-direction: column;
+        @media (min-width: 768px){
+            margin-left: 100px;
+            margin-right: 100px;
+        }
+        @media (min-width: 1440px){
+            margin-left: 276px;
+            margin-right: 276px;
+        }
+        &__one{
+            padding-top: 1.5rem;
+            border-top: solid 1px $divider;
+            display: flex;
+            &__image{
+                background-color: $divider;
+                width: 2.25rem;
+                height: 2.25rem;
+                border-radius: 1.2rem;
+            }
+            &__comment{
+                display: flex;
+                flex-direction: column;
+                margin-left:1rem;
+                width: 80%;
+                &__header{
+                    display: flex;
+                    justify-content: space-between;
+                    &--name{
+                        @include subheader();
+                    }
+                    &--date{
+                        color: $divider;
+                    }
+                }
+                &__body{
+                    @include subheader-com();
+                    margin-top: 1rem;
+                    margin-bottom: 1.5rem;
+                    
+                   }
+            }
+        }
+        border-bottom: solid 1px $divider;
+        margin-bottom: 2.5rem;
+    }
+    &--Template{
+        display: none;
+    }
+}

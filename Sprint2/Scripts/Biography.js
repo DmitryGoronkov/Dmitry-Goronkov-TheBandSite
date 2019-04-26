@@ -41,7 +41,7 @@ function buildComList(){
 }
 buildComList();
 // function below adds a new comment to the array, clears the comments list and rebuilds it again with a new updated array.
-function displayComment() {
+function displayComment(event) {
     event.preventDefault();
     let newcomment = document.getElementById("comment").value;
     let newname = document.getElementById("name").value;
