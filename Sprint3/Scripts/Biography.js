@@ -1,5 +1,5 @@
 const ApiKey = "81024257-317e-4d5f-9cc1-aa2929f25663";
-let comlist = [];
+let comList = [];
 
 //Function below converts a timestamp to date
 function timestampConversion(timestamp){
@@ -9,7 +9,7 @@ function timestampConversion(timestamp){
     if (month < 10) {
         month = `0${month}`;
     }
-    let day = timeToConvert.getDay();
+    let day = timeToConvert.getDate();
     if (day < 10) {
         day = `0${day}`;
     }
@@ -24,12 +24,28 @@ function displayComment(singleComment){
         const selector = ".commentsec__existing__one__comment";
         newblock.querySelector(`${selector}__header--name`).innerHTML = singleComment.name;
         newblock.querySelector(`${selector}__header--date`).innerHTML = singleComment.date;
+        // The code below add images to different users
+        const photoSelector = ".commentsec__existing__one__image";
+        function imageAdd (url){
+            newblock.querySelector(`${photoSelector}`).style.backgroundImage = `${url}`;
+            newblock.querySelector(`${photoSelector}`).style.backgroundPosition = "center";
+            newblock.querySelector(`${photoSelector}`).style.backgroundSize = "cover";
+        }
+        if (singleComment.photo){
+            imageAdd(`url("./Assets/Images/Mohan-muruge.jpg")`);
+        }
+        if (singleComment.name === "Micheal Lyons"){
+            imageAdd(`url("./Assets/Images/Michael.jpg")`);
+        }
+        if (singleComment.name === "Gary Wong"){
+            imageAdd(`url("./Assets/Images/Gary.jpg")`);
+        }
+        if (singleComment.name === "Theodore Duncan"){
+            imageAdd(`url("./Assets/Images/Teo.jpg")`);
+        }
         newblock.querySelector(`${selector}__body`).innerHTML = singleComment.comment;
         newblock.querySelector(`${selector}__body`).overflowWrap = "break-word";
         newblock.style.display = block;
-        // newblock.querySelector(".commentsec__existing__one__image").style.backgroundImage = `${comlist[i].image}`;
-        // newblock.querySelector(".commentsec__existing__one__image").style.backgroundPosition = "center";
-        // newblock.querySelector(".commentsec__existing__one__image").style.backgroundSize = "cover";
         document.querySelector(".commentsec__existing").prepend(newblock);
 }
 
@@ -38,19 +54,25 @@ function getComments(){
     axios.get(`https://project-1-api.herokuapp.com/comments?api_key=${ApiKey}`)
     .then (response => {
         for (let i=0; i < response.data.length; i++){
-            let newcomment = response.data[i].comment;
-            let newname = response.data[i].name;
-            let newdate = timestampConversion(response.data[i].timestamp);
-            let newcomobj = {
-                name: newname,
-                comment: newcomment,
-                date: newdate
+            let newComment = response.data[i].comment;
+            let newName = response.data[i].name;
+            let newDate = timestampConversion(response.data[i].timestamp);
+            let newComObj = {
+                name: newName,
+                comment: newComment,
+                date: newDate
             };
-            comlist.push(newcomobj);
+            // The conditional statement below will just add a visual feature of having Mohan's photo added to every new comment. Approved by Ed Jackson :)
+            if (response.data[i].timestamp > 1556396118896){
+                newComObj.photo = true;
+            } else {newComObj.photo = false}
+
+            comList.push(newComObj);
         }
-        comlist.forEach(comment => {
+        comList.forEach(comment => {
             displayComment(comment);
         });
+        console.log(comList);
     })
 }
 getComments();
@@ -58,18 +80,18 @@ getComments();
 // function below adds a new comment to the array, clears the comments list and rebuilds it again with a new updated array.
 function addComment(event) {
     event.preventDefault();
-    let newcomment = document.getElementById("comment").value;
-    let newname = document.getElementById("name").value;
+    let newComment = document.getElementById("comment").value;
+    let newName = document.getElementById("name").value;
     axios.post (`https://project-1-api.herokuapp.com/comments?api_key=${ApiKey}`, {
-        name: newname,
-        comment: newcomment
+        name: newName,
+        comment: newComment
         })
     .then (response => {
         let comListObjs = document.querySelector(".commentsec__existing");
         while (comListObjs.firstChild) { 
             comListObjs.removeChild(comListObjs.firstChild);
         }
-        comlist = [];
+        comList = [];
         getComments();
     })
 }
@@ -91,11 +113,25 @@ axios.get(`https://project-1-api.herokuapp.com/comments?api_key=${ApiKey}`)
         console.log(response.data);
     })
 
-// axios.delete(`https://project-1-api.herokuapp.com/comments/53decfd7-efc0-47c1-9379-c042da5815ab?api_key=${ApiKey}`, {})
+// axios.delete(`https://project-1-api.herokuapp.com/comments/254a21b5-121b-453f-b493-ceb1d9bd0b55?api_key=${ApiKey}`, {})
+//     .then (response => {
+//         console.log(response.data);
+// })
+// axios.delete(`https://project-1-api.herokuapp.com/comments/91f6a798-512c-4bee-ad27-89916f9ea44c?api_key=${ApiKey}`, {})
 //     .then (response => {
 //         console.log(response.data);
 // })
 
+// axios.delete(`https://project-1-api.herokuapp.com/comments/42a33647-a89e-4087-b24f-7a3766259e5a?api_key=${ApiKey}`, {})
+//     .then (response => {
+//         console.log(response.data);
+// })
+// axios.delete(`https://project-1-api.herokuapp.com/comments/a18d00c7-a270-49a7-bdbf-0658b016c1d7?api_key=${ApiKey}`, {})
+//     .then (response => {
+//         console.log(response.data);
+// })
 
-
-
+// axios.delete(`https://project-1-api.herokuapp.com/comments/3d269cbe-5388-4910-a2d4-56180f44b56b?api_key=${ApiKey}`, {})
+//     .then (response => {
+//         console.log(response.data);
+// })
