@@ -1,11 +1,6 @@
-//The following script will make changes in the navbar of the shows webpage
-let bioButton = document.querySelector(".navbar__menu__bio");
-bioButton.style.borderBottom = "solid 3px white";
-bioButton.style.color = "white";
-//Below the array with all the existing comments is created
-// function below builds the comment list
 const ApiKey = "81024257-317e-4d5f-9cc1-aa2929f25663";
 let comlist = [];
+
 //Function below converts a timestamp to date
 function timestampConversion(timestamp){
     const timeToConvert = new Date(timestamp);
@@ -21,23 +16,23 @@ function timestampConversion(timestamp){
     const convertedTime = `${month}/${day}/${year}`;
     return convertedTime;
 }
-// The function below builds the list of commentaries on the page
-function buildComList(){
-    for (let i = 0; i < comlist.length; i++){
-        console.log(i);
-        let block = document.querySelector(".commentsec__existing__one");
+
+// The function below adds a comment on the page
+function displayComment(singleComment){
+        const block = document.querySelector(".commentsec__existing__one");
         let newblock = block.cloneNode(true);
-        newblock.querySelector(".commentsec__existing__one__comment__header--name").innerHTML = comlist[i].name;
-        newblock.querySelector(".commentsec__existing__one__comment__header--date").innerHTML = comlist[i].date;
-        newblock.querySelector(".commentsec__existing__one__comment__body").innerHTML = comlist[i].comment;
-        newblock.querySelector(".commentsec__existing__one__comment__body").overflowWrap = "break-word";
+        const selector = ".commentsec__existing__one__comment";
+        newblock.querySelector(`${selector}__header--name`).innerHTML = singleComment.name;
+        newblock.querySelector(`${selector}__header--date`).innerHTML = singleComment.date;
+        newblock.querySelector(`${selector}__body`).innerHTML = singleComment.comment;
+        newblock.querySelector(`${selector}__body`).overflowWrap = "break-word";
         newblock.style.display = block;
         // newblock.querySelector(".commentsec__existing__one__image").style.backgroundImage = `${comlist[i].image}`;
         // newblock.querySelector(".commentsec__existing__one__image").style.backgroundPosition = "center";
         // newblock.querySelector(".commentsec__existing__one__image").style.backgroundSize = "cover";
         document.querySelector(".commentsec__existing").prepend(newblock);
-    }
 }
+
 //Function below gets the comments from API
 function getComments(){
     axios.get(`https://project-1-api.herokuapp.com/comments?api_key=${ApiKey}`)
@@ -51,26 +46,20 @@ function getComments(){
                 comment: newcomment,
                 date: newdate
             };
-            comlist.unshift(newcomobj);
+            comlist.push(newcomobj);
         }
-        buildComList();
+        comlist.forEach(comment => {
+            displayComment(comment);
+        });
     })
-    console.log(comlist);
 }
-
 getComments();
 
-
-
 // function below adds a new comment to the array, clears the comments list and rebuilds it again with a new updated array.
-function displayComment(event) {
+function addComment(event) {
     event.preventDefault();
     let newcomment = document.getElementById("comment").value;
     let newname = document.getElementById("name").value;
-    let newcomobj = {
-        name: newname,
-        comment: newcomment,
-    }
     axios.post (`https://project-1-api.herokuapp.com/comments?api_key=${ApiKey}`, {
         name: newname,
         comment: newcomment
@@ -80,18 +69,21 @@ function displayComment(event) {
         while (comListObjs.firstChild) { 
             comListObjs.removeChild(comListObjs.firstChild);
         }
+        comlist = [];
         getComments();
-        buildComList();
-        
     })
-    // Code below removes all the nodes from the comment list
-    
-    
-    
 }
 //The following code adds a function to the click of the comment button
 var commentForm = document.querySelector(".commentsec__inputsec__form");
-commentForm.addEventListener("submit", displayComment);
+commentForm.addEventListener("submit", addComment);
+
+
+
+
+
+
+
+
 
 /////////////////
 axios.get(`https://project-1-api.herokuapp.com/comments?api_key=${ApiKey}`)
@@ -99,10 +91,10 @@ axios.get(`https://project-1-api.herokuapp.com/comments?api_key=${ApiKey}`)
         console.log(response.data);
     })
 
-// axios.delete(`https://project-1-api.herokuapp.com/comments/53bd6496-815d-4320-aeb3-d57899de747a?api_key=${ApiKey}`, {})
+// axios.delete(`https://project-1-api.herokuapp.com/comments/53decfd7-efc0-47c1-9379-c042da5815ab?api_key=${ApiKey}`, {})
 //     .then (response => {
 //         console.log(response.data);
-//     })
+// })
 
 
 

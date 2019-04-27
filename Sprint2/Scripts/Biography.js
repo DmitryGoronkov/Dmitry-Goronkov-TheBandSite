@@ -24,24 +24,24 @@ comlist[0] = {
     image: "url('./Assets/Images/Teo.jpg')"
 };
 // function below builds the comment list
-function buildComList(){
-    for (let i = 0; i < comlist.length; i++){
-        let block = document.querySelector(".commentsec__existing__one");
-        let newblock = block.cloneNode(true);
-        newblock.querySelector(".commentsec__existing__one__comment__header--name").innerHTML = comlist[i].name;
-        newblock.querySelector(".commentsec__existing__one__comment__header--date").innerHTML = comlist[i].date;
-        newblock.querySelector(".commentsec__existing__one__comment__body").innerHTML = comlist[i].comment;
-        newblock.querySelector(".commentsec__existing__one__comment__body").overflowWrap = "break-word";
-        newblock.style.display = block;
-        newblock.querySelector(".commentsec__existing__one__image").style.backgroundImage = `${comlist[i].image}`;
-        newblock.querySelector(".commentsec__existing__one__image").style.backgroundPosition = "center";
-        newblock.querySelector(".commentsec__existing__one__image").style.backgroundSize = "cover";
-        document.querySelector(".commentsec__existing").prepend(newblock);
-    }
+function displayComment(singleComment) {
+    let block = document.querySelector(".commentsec__existing__one");
+    let newblock = block.cloneNode(true);
+    newblock.querySelector(".commentsec__existing__one__comment__header--name").innerHTML = singleComment.name;
+    newblock.querySelector(".commentsec__existing__one__comment__header--date").innerHTML = singleComment.date;
+    newblock.querySelector(".commentsec__existing__one__comment__body").innerHTML = singleComment.comment;
+    newblock.querySelector(".commentsec__existing__one__comment__body").overflowWrap = "break-word";
+    newblock.style.display = block;
+    newblock.querySelector(".commentsec__existing__one__image").style.backgroundImage = `${singleComment.image}`;
+    newblock.querySelector(".commentsec__existing__one__image").style.backgroundPosition = "center";
+    newblock.querySelector(".commentsec__existing__one__image").style.backgroundSize = "cover";
+    document.querySelector(".commentsec__existing").prepend(newblock);
 }
-buildComList();
+comlist.forEach(comment => {
+    displayComment(comment);
+});
 // function below adds a new comment to the array, clears the comments list and rebuilds it again with a new updated array.
-function displayComment(event) {
+function addComment(event) {
     event.preventDefault();
     let newcomment = document.getElementById("comment").value;
     let newname = document.getElementById("name").value;
@@ -57,16 +57,20 @@ function displayComment(event) {
         image: "url('./Assets/Images/Mohan-muruge.jpg')"
     };
     comlist.push(newcomobj);
+
     // Code below removes all the nodes from the comment list
     let comListObjs = document.querySelector(".commentsec__existing");
     while (comListObjs.firstChild) { 
         comListObjs.removeChild(comListObjs.firstChild);
     }
-    buildComList();
+    comlist.forEach(comment => {
+        displayComment(comment);
+    });
+    
 }
 //The following code adds a function to the click of the comment button
 var commentForm = document.querySelector(".commentsec__inputsec__form");
-commentForm.addEventListener("submit", displayComment);
+commentForm.addEventListener("submit", addComment);
 
 
 

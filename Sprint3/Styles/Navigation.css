@@ -108,6 +108,11 @@
   }
 }
 
+.navbar__menu__bio--highlighted {
+  border-bottom: solid 3px white;
+  color: white;
+}
+
 .navbar__menu__show {
   font-size: 1rem;
   font-family: 'Main-Font';
@@ -135,6 +140,11 @@
   .navbar__menu__show {
     margin-left: 3.5rem;
   }
+}
+
+.navbar__menu__show--highlighted {
+  border-bottom: solid 3px white;
+  color: white;
 }
 
 .navbar__menu__show:hover {

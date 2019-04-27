@@ -48,7 +48,12 @@
             @media (min-width: 1440px){
                 margin-left:3.5rem;
             }
+            &--highlighted{
+                border-bottom: solid 3px white;
+                color: white;
+            }
         }
+        
         &__show{
             @include navbarfont();
             color: $labelcolor;
@@ -64,6 +69,10 @@
             }
             @media (min-width: 1440px){
                 margin-left:3.5rem; 
+            }
+            &--highlighted{
+                border-bottom: solid 3px white;
+                color: white;
             }
         }
         &__show:hover{
