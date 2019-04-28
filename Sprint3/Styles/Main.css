@@ -762,6 +762,28 @@ a {
   }
 }
 
+.commentsec__existing__one__comment__button {
+  display: none;
+  height: 2rem;
+  background-color: white;
+  border: none;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  color: #AFAFAF;
+  font-family: 'Main-Font-Demibold';
+  margin: 0;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 0.3rem;
+  width: 5rem;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.commentsec__existing__one__comment__button:focus {
+  outline: none;
+}
+
 .commentsec--Template {
   display: none;
 }

@@ -345,7 +345,25 @@ a{
                     margin-top: 1rem;
                     margin-bottom: 1.5rem;
                     
-                   }
+                }
+                &__button{
+                    display:none;
+                    height: 2rem;
+                    background-color: white;
+                    border: none;
+                    @include labels();
+                    text-align: center;
+                    text-decoration: none;
+                    border-radius: 0.3rem;
+                    // margin-bottom: 2rem;
+                    width: 5rem;
+                    align-self: flex-end;
+                    
+                }
+                &__button:focus{
+                    outline:none;
+                }
+                
             }
         }
         border-bottom: solid 1px $divider;
