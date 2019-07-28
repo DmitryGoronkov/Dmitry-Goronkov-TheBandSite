@@ -12,6 +12,9 @@
         flex-direction: row;   
     }
     &__image{
+        &__logo{
+            width: 65px;
+        } 
         margin-top: 1rem;   
         @media (min-width:426px){
             margin-left:1.5rem;

@@ -84,10 +84,10 @@ function getComments(){
 getComments();
 
 ///// delete comment function. Delete button is added only to new posted comments 
-function deleteAndGet() {
+function  deleteAndGet() {
     comList.forEach(comment => {
         function deleteComment (){
-            axios.delete(`https://project-1-api.herokuapp.com/comments/${comment.id}?api_key=${ApiKey}`, {})
+            const await = axios.delete(`https://project-1-api.herokuapp.com/comments/${comment.id}?api_key=${ApiKey}`, {})
             .then (response => {
                 let comListObjs = document.querySelector(".commentsec__existing");
                 while (comListObjs.firstChild) { 

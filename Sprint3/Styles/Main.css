@@ -89,6 +89,37 @@ a {
   }
 }
 
+.hero__button {
+  height: 3rem;
+  margin-top: 2rem !important;
+  background-color: #ff943c;
+  border: none;
+  font-size: 0.8rem;
+  line-height: 1.25rem;
+  color: white;
+  font-family: 'Main-Font-Demibold';
+  margin: 0;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 0.3rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .hero__button {
+    width: 160px;
+  }
+}
+
+.hero__button:focus {
+  outline: none;
+}
+
+.hero__button:active {
+  background-color: #181769;
+}
+
 .main {
   margin-left: 1rem;
   margin-right: 1rem;
@@ -553,7 +584,7 @@ a {
 .commentsec__inputsec__form label {
   font-size: 0.75rem;
   line-height: 1.25rem;
-  color: #AFAFAF;
+  color: #ececec;
   font-family: 'Main-Font-Demibold';
   margin: 0;
 }
@@ -594,7 +625,7 @@ a {
 
 .commentsec__inputsec__form #name:focus {
   outline: none;
-  border: solid 2px #323232;
+  border: solid 2px #ff943c;
 }
 
 .commentsec__inputsec__form #comment {
@@ -629,12 +660,12 @@ a {
 
 .commentsec__inputsec__form #comment:focus {
   outline: none;
-  border: solid 2px #323232;
+  border: solid 2px #ff943c;
 }
 
 .commentsec__inputsec__form__button {
   height: 3rem;
-  background-color: #323232;
+  background-color: #ff943c;
   border: none;
   font-size: 0.8rem;
   line-height: 1.25rem;
@@ -769,7 +800,7 @@ a {
   border: none;
   font-size: 0.75rem;
   line-height: 1.25rem;
-  color: #AFAFAF;
+  color: #ececec;
   font-family: 'Main-Font-Demibold';
   margin: 0;
   text-align: center;

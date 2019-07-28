@@ -30,6 +30,28 @@ a{
         @include main-header();
         margin:0; 
     }
+    &__button{
+        height: 3rem;
+        margin-top: 2rem !important;
+        background-color: $navgroundcolor;
+        border: none;
+        @include labels-button();
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 0.3rem;
+        margin-bottom: 2rem;
+        @media(min-width: 768px){
+            width: 160px;
+            // align-self: flex-end;
+        }
+    }
+    &__button:focus{
+        outline:none;
+    }
+    &__button:active{
+        background-color:$clicked;
+    }
 }
 .main{
     @include side-margin();

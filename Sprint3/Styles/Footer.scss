@@ -1,4 +1,6 @@
 @import './variables.scss';
+@import './Mixins.scss';
+@import './Font-face.scss';
 .footer{
     background-color: $navgroundcolor;
     padding-top: 2.5rem;
