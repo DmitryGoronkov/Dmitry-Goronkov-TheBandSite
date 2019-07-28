@@ -21,6 +21,29 @@
         line-height: 2.75rem;
     }
 }
+@mixin main-header3{
+    color: $textbackfill;
+    font-family: 'Main-Font-Bold', sans-serif;
+    line-height: 2rem;
+    font-size: 1.5rem;
+    margin:0;
+    @media (min-width: 800px){
+        font-size: 3.75rem;
+        line-height: 4.25rem;
+    }
+}
+
+@mixin header3{
+    color:$parcolor;
+    line-height: 2rem;
+    font-size: 1.5rem;
+    font-family: 'Main-Font-Bold', sans-serif;
+    margin:0;
+    @media (min-width: 800px){
+        font-size: 2.25rem;
+        line-height: 2.75rem;
+    }
+}
 @mixin header2{
     color:$parcolor;
     line-height: 2rem;

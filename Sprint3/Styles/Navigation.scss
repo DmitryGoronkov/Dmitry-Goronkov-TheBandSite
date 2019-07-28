@@ -4,12 +4,14 @@
 .navbar{
     background-color: $navgroundcolor;
     color: $labelcolor;
-    height: 5rem;
+    
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 7rem; 
     @media (min-width:426px){
-        flex-direction: row;   
+        flex-direction: row;  
+        height: 5rem;
     }
     &__image{
         &__logo{
@@ -42,6 +44,7 @@
             padding-bottom: 2px;
             @media (max-width: 425px){
                 width:100%;
+                padding-bottom: 7px;
             }
             @media (min-width: 426px){
                 margin-left:3rem;
@@ -64,6 +67,7 @@
             padding-bottom: 2px;
             @media (max-width: 425px){
                 width:100%;
+                padding-bottom: 7px;
             }
             @media (min-width: 426px){
                 margin-left:2.5rem;
